@@ -6,19 +6,20 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
 }
 .aA {
   font-size: 1.3vw;
   color: rgba(0, 0, 0, 0.417);
   padding: 10vh 0;
-  /* font-weight: bold; */
   font-size: 2vw;
+  text-align: center;
+  margin-bottom: 5vw;
 }
 .aB {
-  width: 100%;
+  width: 70%;
   object-fit: contain;
+  margin-bottom: 5vw;
 }
 .b {
   position: fixed;
@@ -118,4 +119,16 @@
   height: 2.5vw;
   background-repeat: no-repeat;
   background-size: contain;
+}
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+.c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 37vw;
+  display: flex;
+  align-items: center;
 }

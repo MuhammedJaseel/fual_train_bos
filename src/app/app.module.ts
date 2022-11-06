@@ -10,7 +10,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { NgChartsModule } from 'ng2-charts';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { OperationsComponent } from './operations/operations.component';
 import { HomeOperationsComponent } from './home-operations/home-operations.component';
 import { HomeMonitoringComponent } from './home-monitoring/home-monitoring.component';
 import { HomeReportsComponent } from './home-reports/home-reports.component';
@@ -22,7 +21,6 @@ import { HomeConfigurationComponent } from './home-configuration/home-configurat
     HomeComponent,
     HomeDashboardComponent,
     LoginComponent,
-    OperationsComponent,
     HomeOperationsComponent,
     HomeMonitoringComponent,
     HomeReportsComponent,

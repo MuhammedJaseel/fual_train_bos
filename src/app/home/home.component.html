@@ -7,17 +7,37 @@
   <div class="aA">
     <img height="100%" [src]="userData.logo" />
   </div>
+  <div></div>
   <div class="aB"></div>
   <div class="aC">
-    <div class="aCa"></div>
-    <div class="aCb">
-      <div class="aCbA">Welcome</div>
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/sos.svg)"
+    ></div>
+    <!-- Use bell_on.svg for unread notification -->
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/bell.svg)"
+    ></div>
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/person.svg)"
+    ></div>
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/lang.svg)"
+    ></div>
+  </div>
+  <div class="aD">
+    <div class="aDa"></div>
+    <div class="aDb">
+      <div class="aDbA">Welcome</div>
       <!-- For User Name -->
-      <div class="aCbC">{{ userData.name }}</div>
+      <div class="aDbC">{{ userData.name }}</div>
     </div>
     <!-- This image tag will taking rsponsibiliyu for profile picture -->
     <img
-      class="aCc"
+      class="aDc"
       [src]="userData.photo"
       (click)="isProfilePopup = !isProfilePopup"
     />
@@ -51,16 +71,26 @@
 <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
 <div class="c">
   <div class="cA">
-    <div
-      *ngFor="let ic of drowerIcon; let i = index"
-      class="cAa"
-      [ngClass]="{ cAa_: drowerPath === ic.path }"
-      (click)="onDrowerIconClick(i)"
-      [ngStyle]="{
-        'background-image': 'url(../../assets/sidebar/' + ic.icon + '.svg)'
-      }"
-    >
-      {{ ic.title }}
+    <div *ngFor="let ic of drowerIcon; let i = index">
+      <div
+        class="cAa"
+        [ngClass]="{ cAa_: drowerPath === ic.path }"
+        (click)="onDrowerIconClick(i)"
+        [ngStyle]="{
+          'background-image': 'url(../../assets/sidebar/' + ic.icon + '.svg)'
+        }"
+      >
+        {{ ic.title }}
+      </div>
+      <div [ngClass]="ic.subTitles ? 'cAb' : 'cAb__'">
+        <div
+          [ngClass]="subPath === it.path ? 'cAbA_' : 'cAbA'"
+          *ngFor="let it of ic?.subTitles; let k = index"
+          (click)="onDrowerSubPathClick(i, k)"
+        >
+          {{ it.title }}
+        </div>
+      </div>
     </div>
   </div>
   <div class="cB"></div>

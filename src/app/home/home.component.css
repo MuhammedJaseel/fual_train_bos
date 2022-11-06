@@ -34,17 +34,29 @@
   display: flex;
   align-items: center;
 }
-.aCb {
+.aCa {
+  margin: 0 0.4vw;
+  width: 2.2vw;
+  height: 2.2vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.aD {
+  display: flex;
+  align-items: center;
+}
+.aDb {
   margin: 0.5vw;
 }
-.aCbA {
+.aDbA {
   font-size: 0.75vw;
   font-weight: 200;
 }
-.aCbC {
+.aDbC {
   font-size: 0.85vw;
 }
-.aCc {
+.aDc {
   width: 2.2vw;
   height: 2.2vw;
   margin: 0.4vw;
@@ -112,6 +124,35 @@
   color: white;
   background-color: rgba(255, 255, 255, 0.25);
   filter: opacity(1);
+}
+.cAa:hover + .cAb {
+  transition: 0.3s;
+  height: 15vw;
+}
+.cAb:hover {
+  transition: 0.3s;
+  height: 15vw;
+}
+.cAb,
+.cAb_,
+.cAb__ {
+  transition: 0.3s;
+  overflow: hidden;
+  height: 0;
+}
+.cAb_ {
+  height: 15vw;
+}
+.cAbA,
+.cAbA_ {
+  padding: 0.5vw 1vw;
+  padding-left: 3vw;
+  cursor: pointer;
+  font-size: 0.7vw;
+  color: rgba(255, 255, 255, 0.6);
+}
+.cAbA_ {
+  color: white;
 }
 .cB {
   height: 3.8vw;
