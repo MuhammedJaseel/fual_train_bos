@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-reports.component.css']
 })
 export class HomeReportsComponent implements OnInit {
+  selectedIndex: number =0;
+  cardData: { cardName: string; cardDesc: string; }[] = [];
 
   constructor() { }
 
@@ -78,7 +80,8 @@ export class HomeReportsComponent implements OnInit {
 
   onNavIconClick = (k: number) =>
   {
-    
+    this.selectedIndex = k;
+    this.cardData = this.navbarData[k].subMenu;
   }
 
 }

@@ -1,10 +1,17 @@
-<p>Reports ></p>
 <div>
-<span *ngFor = "let name of navbarData; let i = index"
-class = "navbar">
-   <span 
-   (click)="onNavIconClick(i)"> {{ name.name }} </span>
-</span>
-
+    <p>Reports ></p>
+    <div>
+        <span *ngFor="let name of navbarData; let i = index" class="navbar">
+            <a (click)="onNavIconClick(i);">
+                <span>
+                    {{ name.name }} </span>
+            </a>
+        </span>
+    </div>
+    <div *ngFor="let selectedIndex of cardData;">
+        <span class="card">
+            <h3>{{selectedIndex.cardName}}</h3>
+            <p>{{selectedIndex.cardDesc}}</p>
+        </span>
+    </div>
 </div>
-
