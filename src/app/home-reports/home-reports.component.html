@@ -1,5 +1,9 @@
-<div>
-    <p>Reports ></p>
+<div *ngIf="cardSelectedIndex == 0">
+    <div class="mainScreenReport">
+        <a>
+            Reports >
+        </a>
+    </div>
     <div>
         <span *ngFor="let name of navbarData; let i = index" class="navbar">
             <a (click)="onNavIconClick(i);">
@@ -8,10 +12,48 @@
             </a>
         </span>
     </div>
-    <div *ngFor="let selectedIndex of cardData;">
-        <span class="card">
-            <h3>{{selectedIndex.cardName}}</h3>
-            <p>{{selectedIndex.cardDesc}}</p>
-        </span>
+    <div class="topLine"></div>
+    <div class="flexProp">
+        <div class="card" *ngFor="let selectedIndex of cardData; let i = index" (click)="onCardClick(i)">
+            <div [ngStyle]="{
+                'background-image': 'url(../../assets/report_card_img.svg)',
+                'width': '3vw',
+                'height': '3vw',
+                'background-size': 'contain'
+              }"></div>
+            <div style="margin-left: 1vw;">
+                <div class="boldProp">{{selectedIndex.cardName}}</div>
+                <div>{{selectedIndex.cardDesc}}</div>
+            </div>
+        </div>
     </div>
+</div>
+
+<div *ngIf="cardSelectedIndex !== 0">
+    <div class="flexProp">
+        <div class="report">
+            <a (click)="reportScreen()" class="reportData">
+                Reports >
+            </a>
+            <a class="reportName">
+                {{breadCrum}}
+            </a>
+        </div>
+
+        <div>
+            <!-- <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+              </mat-date-range-input>
+              
+              <mat-date-range-picker #picker></mat-date-range-picker> -->
+        </div>
+
+
+    </div>
+
+
+
+
+
 </div>

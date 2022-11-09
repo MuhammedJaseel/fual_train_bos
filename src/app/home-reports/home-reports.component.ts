@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @Component({
   selector: 'app-home-reports',
@@ -6,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-reports.component.css']
 })
 export class HomeReportsComponent implements OnInit {
-  selectedIndex: number =0;
+  selectedIndex: number = 0;
   cardData: { cardName: string; cardDesc: string; }[] = [];
+  cardSelectedIndex: number = 0;
+  breadCrum!: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   navbarData = [
@@ -25,7 +30,7 @@ export class HomeReportsComponent implements OnInit {
         cardName: "Field officer inspection",
         cardDesc: "Description"
       },
-           
+
       ]
     },
     {
@@ -33,55 +38,63 @@ export class HomeReportsComponent implements OnInit {
       subMenu: [{
         cardName: "Equipment wise alarm",
         cardDesc: "Description"
-      },         
+      },
       ]
     },
     {
       name: "Transactions",
       subMenu: [{
-        cardName: "",
-        cardDesc: ""
-      },         
+        cardName: "Test",
+        cardDesc: "test"
+      },
       ]
     },
     {
       name: "Deliveries",
       subMenu: [{
-        cardName: "",
-        cardDesc: ""
-      },         
+        cardName: "Test",
+        cardDesc: "test"
+      },
       ]
     },
     {
       name: "Report builder",
       subMenu: [{
-        cardName: "",
-        cardDesc: ""
-      },         
+        cardName: "Test",
+        cardDesc: "test"
+      },
       ]
     },
     {
       name: "Custom Report",
       subMenu: [{
-        cardName: "",
-        cardDesc: ""
-      },         
+        cardName: "Test",
+        cardDesc: "test"
+      },
       ]
     },
     {
       name: "Data Reconcilation Report",
       subMenu: [{
-        cardName: "",
-        cardDesc: ""
-      },         
+        cardName: "Test",
+        cardDesc: "test"
+      },
       ]
     },
   ]
 
-  onNavIconClick = (k: number) =>
-  {
+  onNavIconClick = (k: number) => {
     this.selectedIndex = k;
     this.cardData = this.navbarData[k].subMenu;
+  }
+
+  onCardClick = (k: number) => {
+    this.cardSelectedIndex = k + 1;
+    this.breadCrum = this.navbarData[this.selectedIndex].subMenu[k].cardName;
+  }
+  reportScreen() {
+    this.cardSelectedIndex = 0;
+
   }
 
 }

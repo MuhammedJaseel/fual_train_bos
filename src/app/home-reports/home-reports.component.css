@@ -1,11 +1,59 @@
+.mainScreenReport{
+    display: flex;   
+    font-size: 2vw;
+    margin-left: 1vw; 
+    color: #707070;
+}
+.report{
+display: flex;
+}
+.reportData{
+    font-size: 2vw;
+    margin-left: 1vw;
+    color: #707070;
+}
+.reportName{
+    margin-top: 0.4vw;
+    font-size: 1.5vw;
+    margin-left: 1vw;
+    color: #707070;
+}
+.report:hover{
+    cursor: pointer;  
+}
 .navbar {
     font-family: mic-32-new-rounded-web, sans-serif;
     font-style: normal;
     font-weight: 300;
     color: #575757;
     width: 4vw;
+    font-size: 1vw;
+    padding-left: 1vw;
 }
 .navbar:hover{
     color: #00649E;
     cursor: pointer;
+    background-color: #415365;
 }
+.card{
+    background-color: #E9F4FF;
+    padding: 1vw;
+    margin: 1vw;
+    display: flex;
+}
+.card:hover{
+    cursor: pointer;
+}
+.boldProp{
+    font-weight: 500;
+}
+.flexProp{
+    display: flex;
+}
+.topLine{
+    background-color: #707070;
+    height: .1vw;
+    margin-top: 1vw;
+}
+
+
